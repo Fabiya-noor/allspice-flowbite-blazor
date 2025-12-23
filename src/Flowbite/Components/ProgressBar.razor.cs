@@ -115,11 +115,14 @@ public partial class ProgressBar
 
         if (Striped)
         {
-            classes.Add("bg-gradient-to-r from-transparent via-white/20 to-transparent bg-[length:1rem_1rem]");
+            // We add an image overlay so the background color set in GetColorClass stays visible
+            classes.Add("bg-[linear-gradient(45deg,rgba(255,255,255,.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,.15)_50%,rgba(255,255,255,.15)_75%,transparent_75%,transparent)]");
+            classes.Add("bg-[length:1rem_1rem]");
 
             if (AnimateStripes)
             {
-                classes.Add("animate-[stripes_1s_linear_infinite]");
+                // Note: Ensure 'animate-pulse' or a custom 'stripes' animation is in your CSS
+                classes.Add("animate-pulse");
             }
         }
 
@@ -168,29 +171,34 @@ public partial class ProgressBar
 
     private string GetColorClass() => Color switch
     {
+        // Blue: This maps to your --color-primary-600 (#2563eb) in your @theme
+        ProgressColor.Blue => "bg-primary-600",
+
         ProgressColor.Gray => "bg-gray-600",
-        ProgressColor.Blue => "bg-blue-600",
-        ProgressColor.Green => "bg-green-600",        
+        ProgressColor.Green => "bg-green-600",
         ProgressColor.Red => "bg-red-600",
-        ProgressColor.Yellow => "bg-yellow-500",      
-        ProgressColor.Purple => "bg-purple-600",      
+        ProgressColor.Yellow => "bg-yellow-400",
+        ProgressColor.Purple => "bg-purple-600",
         ProgressColor.Pink => "bg-pink-500",
         ProgressColor.Indigo => "bg-indigo-600",
         ProgressColor.Teal => "bg-teal-500",
-        ProgressColor.Orange => "bg-orange-500",
+        ProgressColor.Orange => "bg-orange-600",
         ProgressColor.Cyan => "bg-cyan-500",
         ProgressColor.Lime => "bg-lime-500",
-        _ => "bg-blue-600"
+
+        // Fallback to Primary Blue
+        _ => "bg-primary-600"
     };
 
     private string GetInsideLabelColorClass() => Color switch
     {
         ProgressColor.Gray => "text-gray-100",
+        // Blue uses your primary light text
         ProgressColor.Blue => "text-blue-100",
-        ProgressColor.Green => "text-green-100",     
+        ProgressColor.Green => "text-green-100",
         ProgressColor.Red => "text-red-100",
-        ProgressColor.Yellow => "text-yellow-900",   
-        ProgressColor.Purple => "text-purple-100",   
+        ProgressColor.Yellow => "text-yellow-900",
+        ProgressColor.Purple => "text-purple-100",
         ProgressColor.Pink => "text-pink-100",
         ProgressColor.Indigo => "text-indigo-100",
         ProgressColor.Teal => "text-teal-100",
@@ -199,6 +207,7 @@ public partial class ProgressBar
         ProgressColor.Lime => "text-lime-900",
         _ => "text-blue-100"
     };
+
 
     private string GetCornerClass() => Corner switch
     {
