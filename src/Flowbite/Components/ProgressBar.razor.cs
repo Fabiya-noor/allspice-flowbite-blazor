@@ -115,13 +115,11 @@ public partial class ProgressBar
 
         if (Striped)
         {
-            // We add an image overlay so the background color set in GetColorClass stays visible
             classes.Add("bg-[linear-gradient(45deg,rgba(255,255,255,.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,.15)_50%,rgba(255,255,255,.15)_75%,transparent_75%,transparent)]");
             classes.Add("bg-[length:1rem_1rem]");
 
             if (AnimateStripes)
             {
-                // Note: Ensure 'animate-pulse' or a custom 'stripes' animation is in your CSS
                 classes.Add("animate-pulse");
             }
         }
@@ -171,7 +169,6 @@ public partial class ProgressBar
 
     private string GetColorClass() => Color switch
     {
-        // Blue: This maps to your --color-primary-600 (#2563eb) in your @theme
         ProgressColor.Blue => "bg-primary-600",
 
         ProgressColor.Gray => "bg-gray-600",
@@ -186,14 +183,12 @@ public partial class ProgressBar
         ProgressColor.Cyan => "bg-cyan-500",
         ProgressColor.Lime => "bg-lime-500",
 
-        // Fallback to Primary Blue
         _ => "bg-primary-600"
     };
 
     private string GetInsideLabelColorClass() => Color switch
     {
         ProgressColor.Gray => "text-gray-100",
-        // Blue uses your primary light text
         ProgressColor.Blue => "text-blue-100",
         ProgressColor.Green => "text-green-100",
         ProgressColor.Red => "text-red-100",
