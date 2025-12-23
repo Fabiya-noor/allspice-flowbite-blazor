@@ -154,10 +154,3 @@ html, body {
     min-width: 0;
 }
 
-.lg\:h-\[calc\(100vh-61px\)\] {
-    border-right: 1px solid #e5e7eb;
-}
-
-.dark .lg\:h-\[calc\(100vh-61px\)\] {
-    border-right-color: #374151;
-}

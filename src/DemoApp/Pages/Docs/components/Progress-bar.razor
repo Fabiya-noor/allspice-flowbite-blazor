@@ -86,23 +86,7 @@
             </PreviewContent>
         </ComponentExample>
 
-        <!-- Striped with Animation -->
-        <ComponentExample Title="Animated Stripes"
-                          Description="Progress bars with animated striped patterns."
-                          RazorCode=@(@"
- <div class=""space-y-4"">""ProgressColor.Blue"" />
- <ProgressBar Value=""60"" Striped=""true"" AnimateStripes=""true"" Color=""ProgressColor.Green"" />
- <ProgressBar Value=""80"" Striped=""true"" AnimateStripes=""true"" Color=""ProgressColor.Purple"" />
- </div>")
-                          SupportedLanguages="@(new[] { "razor" })">
-            <PreviewContent>
-                <div class="space-y-4">
-                    <ProgressBar Value="40" Striped="true" Color="ProgressColor.Blue" />
-                    <ProgressBar Value="60" Striped="true" AnimateStripes="true" Color="ProgressColor.Green" />
-                    <ProgressBar Value="80" Striped="true" AnimateStripes="true" Color="ProgressColor.Purple" />
-                </div>
-            </PreviewContent>
-        </ComponentExample>
+      
 
         <!-- All Sizes -->
         <ComponentExample Title="Size Variants"
