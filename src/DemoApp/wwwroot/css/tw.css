@@ -107,8 +107,14 @@ main > h2,
 /* COMPONENTS --------------------------------------------------------------------------------------------------------------------------- */
 
 .side-bar-item {
-    @apply px-3 rounded-lg flex flex-wrap items-center py-2 text-base font-medium text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-white;
+    /* Changed: Increased horizontal padding (px-10) to center content in the wider sidebar */
+    /* Added: justify-start (default) but with higher padding looks centered */
+    @apply px-10 rounded-lg flex items-center py-2 text-base font-medium text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-white transition-colors whitespace-nowrap overflow-hidden text-ellipsis;
+    width: 100%;
 }
+
+/* Match the section headers (h5) to the same centered alignment */
+
 
 /* Reset h2 styles inside Accordion components - must override global h2 */
 .flowbite-accordion h2 {
@@ -126,3 +132,43 @@ main > h2,
     line-height: 1.5rem !important;
 }
 
+/* Add to your app.css or site.css */
+html, body {
+    height: 100%;
+}
+
+/* Fix for sidebar sticky positioning */
+@media (min-width: 1024px) {
+    .lg\:sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 61px;
+        align-self: flex-start;
+    }
+
+    /* Ensure sidebar doesn't overflow container */
+    .lg\:h-\[calc\(100vh-61px\)\] {
+        height: calc(100vh - 61px);
+        max-height: calc(100vh - 61px);
+        overflow-y: auto;
+    }
+
+        /* Remove any bottom margin/padding that might cause overflow */
+        .lg\:h-\[calc\(100vh-61px\)\] nav {
+            padding-bottom: 1rem;
+        }
+}
+
+/* Ensure content area doesn't get squished */
+.w-full.min-w-0 {
+    min-width: 0;
+}
+
+/* Add subtle border to sidebar for better visual separation */
+.lg\:h-\[calc\(100vh-61px\)\] {
+    border-right: 1px solid #e5e7eb;
+}
+
+.dark .lg\:h-\[calc\(100vh-61px\)\] {
+    border-right-color: #374151;
+}
