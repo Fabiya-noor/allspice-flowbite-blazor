@@ -170,10 +170,10 @@ public partial class ProgressBar
     {
         ProgressColor.Gray => "bg-gray-600",
         ProgressColor.Blue => "bg-blue-600",
-        ProgressColor.Green => "bg-green-600",        // Changed from emerald
+        ProgressColor.Green => "bg-green-600",        
         ProgressColor.Red => "bg-red-600",
-        ProgressColor.Yellow => "bg-yellow-500",      // Changed from amber
-        ProgressColor.Purple => "bg-purple-600",      // Changed from violet
+        ProgressColor.Yellow => "bg-yellow-500",      
+        ProgressColor.Purple => "bg-purple-600",      
         ProgressColor.Pink => "bg-pink-500",
         ProgressColor.Indigo => "bg-indigo-600",
         ProgressColor.Teal => "bg-teal-500",
@@ -187,10 +187,10 @@ public partial class ProgressBar
     {
         ProgressColor.Gray => "text-gray-100",
         ProgressColor.Blue => "text-blue-100",
-        ProgressColor.Green => "text-green-100",      // Changed from emerald
+        ProgressColor.Green => "text-green-100",     
         ProgressColor.Red => "text-red-100",
-        ProgressColor.Yellow => "text-yellow-900",    // Changed from amber
-        ProgressColor.Purple => "text-purple-100",    // Changed from violet
+        ProgressColor.Yellow => "text-yellow-900",   
+        ProgressColor.Purple => "text-purple-100",   
         ProgressColor.Pink => "text-pink-100",
         ProgressColor.Indigo => "text-indigo-100",
         ProgressColor.Teal => "text-teal-100",
